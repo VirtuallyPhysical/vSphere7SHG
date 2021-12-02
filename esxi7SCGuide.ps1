@@ -14,7 +14,7 @@ Write-Host
 Write-Host
 $selection = Read-Host " Please make a selection (Q to Quit)"
 
-if($selection -eq 'Q'){
+if($selection -eq "Q"){
 		 clear
 }
 
@@ -30,7 +30,7 @@ else{
 function TRF-7x-SecurityGuide
 {
     param (
-        [string]$7xSecurityGuide = 'Select Guideline ID' 
+        [string]$7xSecurityGuide = "Select Guideline ID" 
     )
     Clear-Host
     Write-Host
@@ -82,384 +82,384 @@ function TRF-7x-SecurityGuide
 	Write-Host " 44: Verify Image Profile and VIB Acceptance Levels"
 	Write-Host " 45: Only run binaries delivered via VIB"	
 	Write-Host
-	Write-Host " Q:  Press 'Q' to return to the previous menu." -ForegroundColor yellow
+	Write-Host " Q:  Press "Q" to return to the previous menu." -ForegroundColor yellow
 	
 }
 clear
 #Security Guide Choice
 function TRF-Choice-7x-SecurityGuide
 {
-TRF-7x-SecurityGuide –Title 'Select Check'
+TRF-7x-SecurityGuide –Title "Select Check"
 $selection = Read-Host " Please make a selection"
  switch ($selection)
   {
-     '1' {
-         'Automatically unlock a locked account after a specific amount of time'
+     "1" {
+         "Automatically unlock a locked account after a specific amount of time"
 		 Check-AutoUnlock
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '2' {
-         'Set the count of maximum failed login attempts before the account is locked out'
+     "2" {
+         "Set the count of maximum failed login attempts before the account is locked out"
 		 Check-LockCount
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '3' {
-         'Do not permit password reuse'
+     "3" {
+         "Do not permit password reuse"
 		 Check-PasswordReuse
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '4' {
-         'Establish a policy for password complexity'
+     "4" {
+         "Establish a policy for password complexity"
 		 Check-PasswordComplexity
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '5' {
-         'Use the Authentication Proxy to protect passwords during Active Directory domain joins'
+     "5" {
+         "Use the Authentication Proxy to protect passwords during Active Directory domain joins"
 		 Check-UseAuthProxy
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '6' {
-         'Use Active Directory for ESXi user authentication'
+     "6" {
+         "Use Active Directory for ESXi user authentication"
 		 Check-UseADAuth
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '7' {
-         'Warning for potential hyperthreading security vulnerability is suppressed'
+     "7" {
+         "Warning for potential hyperthreading security vulnerability is suppressed"
 		 Check-HTVulnSuppress
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '8' {
-         'Set a timeout to automatically terminate idle DCUI sessions'
+     "8" {
+         "Set a timeout to automatically terminate idle DCUI sessions"
 		 Check-DCUITimeout
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '9' {
-         'Configure or disable CIM'
+     "9" {
+         "Configure or disable CIM"
 		 Check-CIM
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '10' {
-         'Disable Managed Object Browser (MOB)'
+     "10" {
+         "Disable Managed Object Browser (MOB)"
 		 Check-DisabledMOB
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '11' {
-         'Configure or disable SLP'
+     "11" {
+         "Configure or disable SLP"
 		 Check-DisabledSLP
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '12' {
-         'Configure or disable SNMP'
+     "12" {
+         "Configure or disable SNMP"
 		 check-DisabledSNMP
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '13' {
-         'Disable SSH'
+     "13" {
+         "Disable SSH"
 		 Check-DisabledSSH
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '14' {
-         'Configure the ESXi firewall for additional defense-in-depth'
+     "14" {
+         "Configure the ESXi firewall for additional defense-in-depth"
 		 Check-RestrictFW
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '15' {
-         'Enable UEFI Secure Boot'
+     "15" {
+         "Enable UEFI Secure Boot"
 		 Check-SecureBoot
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '16' {
-         'Ensure that a TPM 20 is installed and enabled on the host'
+     "16" {
+         "Ensure that a TPM 20 is installed and enabled on the host"
 		 Check-TPM20
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '17' {
-         'Hardware firmware is up to date'
+     "17" {
+         "Hardware firmware is up to date"
 		 Check-HostFW
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '18' {
-         'Enable bidirectional/mutual CHAP authentication for iSCSI traffic'
+     "18" {
+         "Enable bidirectional/mutual CHAP authentication for iSCSI traffic"
 		 Check-iSCSIChap
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '19' {
-         'Set DCUIAccess to allow trusted users to override lockdown mode'
+     "19" {
+         "Set DCUIAccess to allow trusted users to override lockdown mode"
 		 Check-DCUIAccess
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '20' {
-         'Audit the users on the Exception Users List'
+     "20" {
+         "Audit the users on the Exception Users List"
 		 Check-ExceptionUsers
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '21' {
-         'Enable normal lockdown mode to restrict access to ESXi'
+     "21" {
+         "Enable normal lockdown mode to restrict access to ESXi"
 		 Check-LockdownMode
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '22' {
-         'Set the logging informational level'
+     "22" {
+         "Set the logging informational level"
 		 Check-LoggingLevel
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '23' {
-         'Configure persistent logging'
+     "23" {
+         "Configure persistent logging"
 		 Check-PersistentLogging
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '24' {
-         'Configure remote logging'
+     "24" {
+         "Configure remote logging"
 		 Check-RemoteLogging
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '25' {
-         'Block guest OS BPDU transmissions'
+     "25" {
+         "Block guest OS BPDU transmissions"
 		 Check-BPDUTransmissions
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '26' {
-         'Audit use of dvfilter network APIs'
+     "26" {
+         "Audit use of dvfilter network APIs"
 		 Check-AuditdvFilter
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '27' {
-         'Ensure hardware management controller interfaces are isolated on their own network segment and protected with perimeter access controls'
+     "27" {
+         "Ensure hardware management controller interfaces are isolated on their own network segment and protected with perimeter access controls"
 		 Check-NetworkIsolation
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '28' {
-         'Ensure ESXi management interfaces are isolated on their own network segment'
+     "28" {
+         "Ensure ESXi management interfaces are isolated on their own network segment"
 		 Check-ManagementIsolation
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '29' {
-         'Ensure vMotion interfaces are isolated on their own network segment and protected with perimeter access controls'
+     "29" {
+         "Ensure vMotion interfaces are isolated on their own network segment and protected with perimeter access controls"
 		 Check-vMotionIsolation
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '30' {
-         'Ensure vSAN interfaces are isolated on their own network segment and protected with perimeter access controls'
+     "30" {
+         "Ensure vSAN interfaces are isolated on their own network segment and protected with perimeter access controls"
 		 Check-AuditOOB
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '31' {
-         'Audit use of server hardware out-of-band management network interfaces'
+     "31" {
+         "Audit use of server hardware out-of-band management network interfaces"
 		 Check-SwitchPolicy
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '32' {
-         'Ensure that the “Forged Transmits” policy is set to reject on both the vSphere Standard Switch and on its port groups'
+     "32" {
+         "Ensure that the “Forged Transmits” policy is set to reject on both the vSphere Standard Switch and on its port groups"
 		 Check-SwitchPolicy
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '33' {
-         'Ensure that the “MAC Address Changes” policy is set to reject on both the vSphere Standard Switch and on its port groups'
+     "33" {
+         "Ensure that the “MAC Address Changes” policy is set to reject on both the vSphere Standard Switch and on its port groups"
 		 Check-SwitchPolicy
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '34' {
-         'Ensure that the “Promiscuous Mode” policy is set to reject on both the vSphere Standard Switch and on its port groups'
+     "34" {
+         "Ensure that the “Promiscuous Mode” policy is set to reject on both the vSphere Standard Switch and on its port groups"
 		 Check-SwitchPolicy
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '35' {
-         'Disable ESXi Shell'
+     "35" {
+         "Disable ESXi Shell"
 		 Check-DisableShell
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '36' {
-         'Set a timeout to automatically terminate idle ESXi Shell and SSH sessions'
+     "36" {
+         "Set a timeout to automatically terminate idle ESXi Shell and SSH sessions"
 		 Check-TimeoutShell
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '37' {
-         'Set a timeout to limit how long the ESXi Shell and SSH services are allowed to run'
+     "37" {
+         "Set a timeout to limit how long the ESXi Shell and SSH services are allowed to run"
 		 Check-TimeoutSSH
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '38' {
-         'Warning for support and troubleshooting interfaces is suppressed'
+     "38" {
+         "Warning for support and troubleshooting interfaces is suppressed"
 		 Check-SuppressAlarms
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '39' {
-         'ESXi is a version with active maintenance by VMware'
+     "39" {
+         "ESXi is a version with active maintenance by VMware"
 		 Check-ActiveMaintenance
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '40' {
-         'Configure NTP or PTP'
+     "40" {
+         "Configure NTP or PTP"
 		 Check-NTP-PTP
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '41' {
-         'Ensure that deprecated SSL/TLS protocols are disabled'
+     "41" {
+         "Ensure that deprecated SSL/TLS protocols are disabled"
 		 Check-DepricatedProtocols
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '42' {
-         'Restrict transparent page sharing to VMs configured with schedmempsharesalt'
+     "42" {
+         "Restrict transparent page sharing to VMs configured with schedmempsharesalt"
 		 Check-RestrictTPS
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '43' {
-         'ESXi is up to date'
+     "43" {
+         "ESXi is up to date"
 		 Check-ESXiUpdate
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '44' {
-         'Verify Image Profile and VIB Acceptance Levels'
+     "44" {
+         "Verify Image Profile and VIB Acceptance Levels"
 		 Check-Image-VIB
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-     '45' {
-         'Only run binaries delivered via VIB'
+     "45" {
+         "Only run binaries delivered via VIB"
 		 Check-IntegrityChecks
 	Write-Host -NoNewLine " Press any key to continue...";
-	$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown");
 	clear
 		 TRF-Choice-7x-SecurityGuide
      }
-	 'Q' {
-         'You chose to go back'
+	 "Q" {
+         "You chose to go back"
 		 clear
 		 TRF-Select-Cluster
      } 
   }
- }
+}
  clear
  
  
@@ -535,10 +535,10 @@ function Check-CIM
 	clear
 Write-Host " CIM should be disabled if not in use" -ForegroundColor yellow
 Write-Host
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'sfcbd-watchdog' -and $_.Running -eq 'True'}
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'sfcbd-watchdog' -and $_.Policy -eq 'On'}
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'sfcbd-watchdog' -and $_.Running -eq 'True'} | export-csv -path "$global:FilePath\Check-CIMRunning $(get-date -f yyyy-MM-dd-hhmm).csv"
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'sfcbd-watchdog' -and $_.Policy -eq 'On'} | export-csv -path "$global:FilePath\Check-CIMPolicy $(get-date -f yyyy-MM-dd-hhmm).csv"
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "sfcbd-watchdog" -and $_.Running -eq "True"}
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "sfcbd-watchdog" -and $_.Policy -eq "On"}
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "sfcbd-watchdog" -and $_.Running -eq "True"} | export-csv -path "$global:FilePath\Check-CIMRunning $(get-date -f yyyy-MM-dd-hhmm).csv"
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "sfcbd-watchdog" -and $_.Policy -eq "On"} | export-csv -path "$global:FilePath\Check-CIMPolicy $(get-date -f yyyy-MM-dd-hhmm).csv"
 } 
 
 #Disable Managed Object Browser (MOB)
@@ -555,10 +555,10 @@ function Check-DisabledSLP
 	clear
 Write-Host " SLP should be disabled if not in use." -ForegroundColor yellow
 Write-Host
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'slpd' -and $_.Running -eq 'True'}
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'slpd' -and $_.Policy -eq 'On'}
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'slpd' -and $_.Running -eq 'True'} | export-csv -path "$global:FilePath\Check-SLPRunning $(get-date -f yyyy-MM-dd-hhmm).csv"
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'slpd' -and $_.Policy -eq 'On'} | export-csv -path "$global:FilePath\Check-SLPPolicy $(get-date -f yyyy-MM-dd-hhmm).csv"
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "slpd" -and $_.Running -eq "True"}
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "slpd" -and $_.Policy -eq "On"}
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "slpd" -and $_.Running -eq "True"} | export-csv -path "$global:FilePath\Check-SLPRunning $(get-date -f yyyy-MM-dd-hhmm).csv"
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "slpd" -and $_.Policy -eq "On"} | export-csv -path "$global:FilePath\Check-SLPPolicy $(get-date -f yyyy-MM-dd-hhmm).csv"
 }
 
 #Configure or disable SNMP
@@ -567,10 +567,10 @@ function Check-DisabledSNMP
 	clear
 Write-Host " If SNMP is not being used it should be disabled." -ForegroundColor yellow
 Write-Host
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'snmpd' -and $_.Running -eq 'True'}
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'snmpd' -and $_.Policy -eq 'On'}
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'snmpd' -and $_.Running -eq 'True'} | export-csv -path "$global:FilePath\Check-SNMPRunning $(get-date -f yyyy-MM-dd-hhmm).csv"
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'snmpd' -and $_.Policy -eq 'On'} | export-csv -path "$global:FilePath\Check-SNMPPolicy $(get-date -f yyyy-MM-dd-hhmm).csv"
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "snmpd" -and $_.Running -eq "True"}
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "snmpd" -and $_.Policy -eq "On"}
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "snmpd" -and $_.Running -eq "True"} | export-csv -path "$global:FilePath\Check-SNMPRunning $(get-date -f yyyy-MM-dd-hhmm).csv"
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "snmpd" -and $_.Policy -eq "On"} | export-csv -path "$global:FilePath\Check-SNMPPolicy $(get-date -f yyyy-MM-dd-hhmm).csv"
 }
 
 #Disable SSH
@@ -579,10 +579,10 @@ function Check-DisabledSSH
 	clear
 Write-Host " ESXi is not a UNIX-like multiuser OS -- it is a purpose-built hypervisor intended to be managed via the Host Client, vSphere Client, and/or APIs. On ESXi, SSH is a troubleshooting and support interface, and is intentionally stopped and disabled by default. Enablement of the interface brings risk." -ForegroundColor yellow
 Write-Host
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'TSM-SSH' -and $_.Running -eq 'True'}
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'TSM-SSH' -and $_.Policy -eq 'On'}
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'TSM-SSH' -and $_.Running -eq 'True'} | export-csv -path "$global:FilePath\Check-SSHRunning $(get-date -f yyyy-MM-dd-hhmm).csv"
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'TSM-SSH' -and $_.Policy -eq 'On'} | export-csv -path "$global:FilePath\Check-SSHPolicy $(get-date -f yyyy-MM-dd-hhmm).csv"
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "TSM-SSH" -and $_.Running -eq "True"}
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "TSM-SSH" -and $_.Policy -eq "On"}
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "TSM-SSH" -and $_.Running -eq "True"} | export-csv -path "$global:FilePath\Check-SSHRunning $(get-date -f yyyy-MM-dd-hhmm).csv"
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "TSM-SSH" -and $_.Policy -eq "On"} | export-csv -path "$global:FilePath\Check-SSHPolicy $(get-date -f yyyy-MM-dd-hhmm).csv"
 }
 
 #Configure the ESXi firewall for additional defense-in-depth.
@@ -606,9 +606,9 @@ write-host " Enable UEFI Secure Boot." -ForegroundColor yellow
 write-host 
 write-host " Manual check required, see notes below" -ForegroundColor red
 write-host
-Write-Host " Enabling UEFI Secure Boot on the ESXi host's hardware helps prevent malware and untrusted configurations." -ForegroundColor yellow
+Write-Host " Enabling UEFI Secure Boot on the ESXi host"s hardware helps prevent malware and untrusted configurations." -ForegroundColor yellow
 write-host
-Write-Host " Use '/usr/lib/vmware/secureboot/bin/secureBoot.py -s' on an example host to determine if Secure Boot is enabled." -ForegroundColor yellow
+Write-Host " Use "/usr/lib/vmware/secureboot/bin/secureBoot.py -s" on an example host to determine if Secure Boot is enabled." -ForegroundColor yellow
 }
 
 
@@ -668,7 +668,7 @@ function Check-ExceptionUsers
 {
 		clear
 	write-host
-	write-host " Users on the Lockdown Mode 'Exception Users' list do not lose their privileges when the host enters lockdown mode. Ensure entries on this list are valid and necessary." -ForegroundColor yellow
+	write-host " Users on the Lockdown Mode "Exception Users" list do not lose their privileges when the host enters lockdown mode. Ensure entries on this list are valid and necessary." -ForegroundColor yellow
 	write-host
 (Get-View -Id (Get-Cluster $global:CLUChoice | Get-VMHost -Name * | Get-View).ConfigManager.HostAccessManager).QueryLockdownExceptions()
 (Get-View -Id (Get-Cluster $global:CLUChoice | Get-VMHost -Name * | Get-View).ConfigManager.HostAccessManager).QueryLockdownExceptions() | export-csv -path "$global:FilePath\Check-ExceptionUsers $(get-date -f yyyy-MM-dd-hhmm).csv"
@@ -701,7 +701,7 @@ function Check-PersistentLogging
 {
 		clear
 	write-host
-	write-host " ESXi can be configured to store log files on an in-memory file system.  This occurs when the host's "/scratch" directory is linked to "/tmp/scratch". When this is done only a single day's worth of logs are stored at any time. In addition log files will be reinitialized upon each reboot.  This presents a security risk as user activity logged on the host is only stored temporarily and will not persistent across reboots.  This can also complicate auditing and make it harder to monitor events and diagnose issues.  ESXi host logging should always be configured to a persistent datastore." -ForegroundColor yellow
+	write-host " ESXi can be configured to store log files on an in-memory file system.  This occurs when the host"s "/scratch" directory is linked to "/tmp/scratch". When this is done only a single day"s worth of logs are stored at any time. In addition log files will be reinitialized upon each reboot.  This presents a security risk as user activity logged on the host is only stored temporarily and will not persistent across reboots.  This can also complicate auditing and make it harder to monitor events and diagnose issues.  ESXi host logging should always be configured to a persistent datastore." -ForegroundColor yellow
 	write-host
 Get-Cluster $global:CLUChoice | Get-VMHost | Get-AdvancedSetting Syslog.global.logDir
 Get-Cluster $global:CLUChoice | Get-VMHost | Get-AdvancedSetting Syslog.global.logDir | export-csv -path "$global:FilePath\Check-PersistentLogging $(get-date -f yyyy-MM-dd-hhmm).csv"
@@ -816,10 +816,10 @@ function Check-DisableShell
 	write-host
 Write-Host " ESXi is not a UNIX-like multiuser OS -- it is a purpose-built hypervisor intended to be managed via the Host Client, vSphere Client, and/or APIs. On ESXi, the ESXi Shell is a troubleshooting and support interface, and is intentionally stopped and disabled by default. Enablement of the interface brings risk.  " -ForegroundColor yellow
 Write-Host
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'TSM' -and $_.Running -eq 'True'}
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'TSM' -and $_.Policy -eq 'On'}
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'TSM' -and $_.Running -eq 'True'} | export-csv -path "$global:FilePath\Check-DisableShellRun $(get-date -f yyyy-MM-dd-hhmm).csv"
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'TSM' -and $_.Policy -eq 'On'} | export-csv -path "$global:FilePath\Check-DisableShellPolicy $(get-date -f yyyy-MM-dd-hhmm).csv"
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "TSM" -and $_.Running -eq "True"}
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "TSM" -and $_.Policy -eq "On"}
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "TSM" -and $_.Running -eq "True"} | export-csv -path "$global:FilePath\Check-DisableShellRun $(get-date -f yyyy-MM-dd-hhmm).csv"
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "TSM" -and $_.Policy -eq "On"} | export-csv -path "$global:FilePath\Check-DisableShellPolicy $(get-date -f yyyy-MM-dd-hhmm).csv"
 }
 
 #Set a timeout to automatically terminate idle ESXi Shell and SSH sessions.
@@ -875,8 +875,8 @@ Write-Host " Cryptography, audit logging, cluster operations, and incident respo
 Write-Host
 Get-Cluster $global:CLUChoice | Get-VMHost | Select Name, @{N="NTPSetting";E={$_ | Get-VMHostNtpServer}}
 Get-Cluster $global:CLUChoice | Get-VMHost | Select Name, @{N="NTPSetting";E={$_ | Get-VMHostNtpServer}} | export-csv -path "$global:FilePath\Check-NTP $(get-date -f yyyy-MM-dd-hhmm).csv"
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'ntpd'}
-Get-VMHostService -VMHost * | Where-Object {$_.Key -eq 'ntpd'} | export-csv -path "$global:FilePath\Check-ntpd $(get-date -f yyyy-MM-dd-hhmm).csv"
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "ntpd"}
+Get-VMHostService -VMHost * | Where-Object {$_.Key -eq "ntpd"} | export-csv -path "$global:FilePath\Check-ntpd $(get-date -f yyyy-MM-dd-hhmm).csv"
 }
 
 #Ensure that deprecated SSL/TLS protocols are disabled.
@@ -938,7 +938,7 @@ function Check-IntegrityChecks
 {
 		clear
 	write-host
-Write-Host " ESXi conducts integrity checks of 'vSphere Installable Bundles' or VIBs, governed by the Acceptance Level (see below). Instructing ESXi to only execute binaries that originated from a valid VIB installed on the host makes it harder for attackers to use prebuilt toolkits during a compromise, and increases chances of detection. " -ForegroundColor yellow
+Write-Host " ESXi conducts integrity checks of vSphere Installable Bundles or VIBs, governed by the Acceptance Level (see below). Instructing ESXi to only execute binaries that originated from a valid VIB installed on the host makes it harder for attackers to use prebuilt toolkits during a compromise, and increases chances of detection. " -ForegroundColor yellow
 Write-Host
 Get-Cluster $global:CLUChoice | Get-VMHost | Get-AdvancedSetting VMkernel.Boot.execInstalledOnly
 Get-Cluster $global:CLUChoice | Get-VMHost | Get-AdvancedSetting VMkernel.Boot.execInstalledOnly | export-csv -path "$global:FilePath\Check-IntegrityChecks $(get-date -f yyyy-MM-dd-hhmm).csv"
