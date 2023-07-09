@@ -1,35 +1,44 @@
-$GlobalTLSsettings = @()
+param (
+    [Parameter(Mandatory=$true)]
+    [string] $vCenterListPath,
 
-$creds = get-credential
+    [Parameter(Mandatory=$true)]
+    [string] $outputPath
+)
 
-foreach ($vCenter in (Get-Content C:\Users\test\Desktop\missing.txt|sort -unique)) {
+$creds = Get-Credential
 
-                if ($global:DefaultVIServers) {Disconnect-VIServer * -Force -Confirm:0}
-                $vcenter_retry_count = 0
-                while ($global:DefaultVIServer.name -notmatch $vcenter) {
-                
-        Write-host "Connecting to $vcenter" -ForegroundColor Yellow
-        Connect-VIServer $vCenter -credential $creds
-        
-                                $vcenter_retry_count++
+Get-Content $vCenterListPath | Sort-Object -Unique | ForEach-Object {
+    $vCenter = $_
+    $connected = $false
 
-                               
-                                if ($vcenter_retry_count -eq 2) {break}
-                }
+    for ($retry = 0; $retry -lt 2; $retry++) {
+        if ($global:DefaultVIServers) {
+            Disconnect-VIServer * -Force -Confirm:0
+        }
 
-                if ($global:DefaultVIServer) {
+        try {
+            Write-host "Connecting to $vCenter" -ForegroundColor Yellow
+            Connect-VIServer $vCenter -credential $creds
+            $connected = $true
+            break
+        }
+        catch {
+            Write-Host "Failed to connect to $vCenter: $_"
+            Start-Sleep -Seconds 10
+        }
+    }
 
-                                $all_vmhosts = Get-VMHost
-                                foreach ($all_vmhost in $all_vmhosts) {
+    if ($connected) {
+        Get-VMHost | ForEach-Object {
+            $all_vmhost = $_
 
-                                                $EsxTLSsettings = "" | select vCenter, ESX, DisabledProtocols
-                                                $EsxTLSsettings.vCenter = $global:DefaultVIServer.name
-                                                $EsxTLSsettings.ESX = $($all_vmhost.name)
-                                                $EsxTLSsettings.DisabledProtocols = Get-AdvancedSetting -Entity $all_vmhost UserVars.ESXiVPsDisabledProtocols | Select -ExpandProperty Value
-                                                $GlobalTLSsettings += $EsxTLSsettings
+            $EsxTLSsettings = "" | select vCenter, ESX, DisabledProtocols
+            $EsxTLSsettings.vCenter = $global:DefaultVIServer.name
+            $EsxTLSsettings.ESX = $($all_vmhost.name)
+            $EsxTLSsettings.DisabledProtocols = Get-AdvancedSetting -Entity $all_vmhost UserVars.ESXiVPsDisabledProtocols | Select -ExpandProperty Value
 
-                                }
-                }
-}
-
-$GlobalTLSsettings | sort vCenter | ConvertTo-Csv -NoTypeInformation | out-file  -force "D:\TLSReport\GlobalTLSsettings $(get-date -f yyyy-MM-dd-hhmm).csv"
+            $EsxTLSsettings
+        }
+    }
+} | Sort-Object vCenter | ConvertTo-Csv -NoTypeInformation | Out-File -Force "$outputPath\GlobalTLSsettings $(get-date -f yyyy-MM-dd-hhmm).csv"
